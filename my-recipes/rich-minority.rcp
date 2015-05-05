@@ -1,6 +1,9 @@
 (my-after-init
   (my-eval-after-load 'rich-minority
-    (dolist (my-highlighted-modes '(("\\` Less\\'" 'face 'font-lock-warning-face)))
+    (dolist (my-highlighted-modes '(
+                                    ("\\` Compiling\\'" 'display " ∞") ;U+221E infin or infinity
+                                    ;; ("\\` Less\\'" 'face 'font-lock-warning-face)
+                                    ))
       (add-to-list 'rm-text-properties my-highlighted-modes))
 
     (dolist (my-hidden-modes '(
@@ -10,6 +13,7 @@
                                " Abbrev" ;abbrev-mode
                                " Helm" ;helm-mode
                                " MRev" ;magit-auto-revert-mode
+                               " Rails" ;projectile-rails
                                " Rbow" ;rainbow-mode
                                " RubyRef" ;ruby-refactor-mode
                                " SP" ;smartparens-mode
